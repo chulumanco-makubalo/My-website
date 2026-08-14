@@ -2,8 +2,8 @@
 # Sibahle Naturals - WEDE5020 POE Part 1
 
 ## Student Information
-**Name**: [Chulumanco] 
-**Student Number**: [ST10535196]  
+**Name**: Chulumanco
+**Student Number**: ST10535196 
 **Course**: WEDE5020
 
 ## 1. Project Overview
