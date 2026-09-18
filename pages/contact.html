@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Range - Sibahle Naturals</title>
+    <title>Contact Us - Sibahle Naturals</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -51,15 +51,19 @@
                 <li>Address: 14 Bird Street, Central, Gqeberha, 6001</li>
                 <li>Map: <a href="https://www.google.com/maps/search/?api=1&query=14+Bird+Street+Central+Gqeberha" target="_blank" rel="noopener">View on Google Maps</a></li>
             </ul>
-            <!--Google Map-->
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.0!2d25.5738!3d-33.9608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBird+Street%2C+Gqeberha!5e0!3m2!1sen!2sza"
-                width="600"
-                height="450"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-                title="Map showing the Sibahle Naturals shop location in Gqeberha">
-            </iframe>
+            <!--Google Map: wrapped so it can be scaled responsively via CSS
+                 (see .map-embed in style.css) instead of relying on the
+                 fixed width/height attributes below. -->
+            <div class="map-embed">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.0!2d25.5738!3d-33.9608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBird+Street%2C+Gqeberha!5e0!3m2!1sen!2sza"
+                    width="600"
+                    height="450"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    title="Map showing the Sibahle Naturals shop location in Gqeberha">
+                </iframe>
+            </div>
         </section>
     </main>
 
