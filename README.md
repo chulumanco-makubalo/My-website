@@ -45,7 +45,7 @@ Health-conscious individuals looking for natural skincare, body care, and wellne
 ### 2026-08-14 - Part 1 Submission
 - Created HTML structure for 5 pages: Home, About, Products, Contact, Enquiry
 - Added header with Sibahle Naturals logo and navigation to all pages
-- Set up assets folder for images
+- Set up Assets folder for images
 
 ## References
 All text content and logo created for Sibahle Naturals project.
