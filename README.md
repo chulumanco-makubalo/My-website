@@ -799,9 +799,13 @@ doesn't point at this repo's root. See Settings &rarr; Pages in the
 repository if this recurs.
 
 ## Responsive Testing Screenshots
-<!-- Add your browser dev-tools screenshots here for mobile, tablet and
-     desktop widths, per section 3.4 of the Part 2 brief, e.g.:
+<!-- 
+     
      ![Mobile view of the homepage](../miscellaneous/screenshot-mobile-home.png)
+     <img width="540" height="1204" alt="WhatsApp Image 2026-09-18 at 21 51 35" src="https://github.com/user-attachments/assets/a364dc45-6775-4822-aea7-599d9baad993" />
+      <img width="1853" height="881" alt="Screenshot 2026-09-18 215331" src="https://github.com/user-attachments/assets/a0d3a09e-3325-477a-8a5c-72e1a9092def" />
+       ![Uploading WhatsApp Image 2026-09-18 at 21.51.32.jpeg…]()
+
 -->
 
 ## References
