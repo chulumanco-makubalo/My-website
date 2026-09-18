@@ -1,0 +1,685 @@
+/* ==========================================================================
+   Sibahle Naturals — Stylesheet
+   WEDE5020 POE Part 2: CSS Styling and Responsive Design
+
+   Contents:
+     1. Font import
+     2. Custom properties (design tokens)
+     3. Reset
+     4. Base / typography
+     5. Layout helpers
+     6. Header & navigation
+     7. Footer
+     8. Buttons, links, form controls
+     9. Home page
+     10. About page
+     11. Our Range (services) page
+     12. Contact page
+     13. Enquiry page
+     14. Responsive images & embeds
+     15. Media queries (tablet / desktop)
+     16. Accessibility & motion
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Font import
+   The Part 1 proposal calls for "a warm, rounded serif or display font for
+   headings, paired with a clean, legible sans-serif for body text and
+   product details." Fraunces (headings) is a soft, rounded-terminal display
+   serif; Karla (body) is a plain, humanist sans that stays legible at small
+   sizes for ingredient lists and FAQs.
+   -------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap");
+
+/* --------------------------------------------------------------------------
+   2. Custom properties
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colour: the palette from the Part 1 proposal — sand and baby pink as
+     light backgrounds; chocolate/espresso for text, logo and footer, used
+     sparingly to ground the palette; mauve/dusty rose as the primary
+     call-to-action accent; olive/meadow as a secondary accent; and a soft
+     lilac spent in one place only (the founder quote) as the feminine
+     accent touch, per the proposal's own guidance to use it sparingly. */
+  --espresso: #4a3220;        /* headings & body text */
+  --espresso-dark: #3a2417;   /* header/footer background */
+  --espresso-darker: #2a1810; /* hover/active state on dark surfaces */
+  --mauve: #b6798a;           /* dusty rose — text links, focus rings */
+  --mauve-dark: #9c5f70;      /* button background (meets AA contrast on ivory text) */
+  --mauve-darker: #7f4a5a;    /* button hover/active state */
+  --mauve-light: #d99cae;     /* mauve accent on the dark header/footer (AA contrast) */
+  --olive: #7e8c57;           /* secondary accent — dividers, values list */
+  --lilac: #cdbbdf;           /* sparing feminine accent — founder quote only */
+  --ivory: #fdf8f2;           /* base page background (kept light for contrast) */
+  --sand: #e6d2b9;            /* section tint 1 — as specified in the proposal */
+  --pink: #f4d9e0;            /* section tint 2 — baby pink, as specified */
+  --sand-dark: #cdb28c;       /* borders/dividers on sand */
+  --white: #ffffff;
+  --line: rgba(74, 50, 32, 0.16);
+
+  /* Type */
+  --font-heading: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Karla", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --text-xs: 0.8rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-xl: clamp(1.6rem, 1.3rem + 1.4vw, 2.1rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2.4vw, 2.9rem);
+
+  /* Spacing scale, used for section rhythm */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+
+  /* Layout */
+  --content-width: 72rem;
+  --text-measure: 42rem; /* ~65ch reading width for prose */
+  --radius: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Reset
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+h1, h2, h3, h4,
+p, ul, ol, dl, dd,
+blockquote, figure {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   4. Base / typography
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--espresso);
+  background-color: var(--ivory);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--espresso-dark);
+}
+
+h1 {
+  font-size: var(--text-2xl);
+  max-width: 22ch;
+}
+
+h2 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+h3 {
+  font-size: var(--text-lg);
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+p {
+  max-width: var(--text-measure);
+}
+
+p + p {
+  margin-top: var(--space-sm);
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+main a:not(.button) {
+  color: var(--mauve-dark);
+  font-weight: 600;
+}
+
+main a:not(.button):hover,
+main a:not(.button):focus-visible {
+  color: var(--espresso-dark);
+}
+
+/* The founder quote is the one place the proposal's lilac accent is spent —
+   "used sparingly... e.g. on one product highlight" — so it stays unique
+   to this element rather than reappearing across the site. */
+blockquote {
+  background-color: var(--lilac);
+  border-left: 4px solid var(--mauve);
+  border-radius: var(--radius);
+  padding: var(--space-md) var(--space-md) var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  max-width: var(--text-measure);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--espresso);
+}
+
+blockquote footer {
+  margin-top: var(--space-xs);
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--espresso);
+}
+
+/* Standard content lists (not the product grids, styled separately) */
+main ul:not([class]) li,
+main ol li {
+  margin-left: 1.1em;
+  margin-bottom: var(--space-xs);
+  max-width: var(--text-measure);
+}
+
+main ul:not([class]) {
+  list-style: "\2013" outside; /* en dash bullet, consistent with the brand's use of &ndash; in copy */
+  padding-left: 1.1em;
+}
+
+dl {
+  max-width: var(--text-measure);
+}
+
+dt {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--espresso-dark);
+  margin-top: var(--space-md);
+}
+
+dd {
+  margin-top: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   5. Layout helpers
+   -------------------------------------------------------------------------- */
+header,
+footer {
+  background-color: var(--espresso-dark);
+  color: var(--ivory);
+}
+
+main {
+  display: block;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-sm) var(--space-xl);
+}
+
+main > h1 {
+  margin-bottom: var(--space-lg);
+}
+
+main > section {
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--line);
+}
+
+main > section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+main > section > h2 {
+  margin-bottom: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   6. Header & navigation
+   -------------------------------------------------------------------------- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .logo img {
+  width: 8.5rem;
+  height: auto;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+}
+
+header nav a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--ivory);
+  padding-block: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  color: var(--mauve-light);
+  border-bottom-color: var(--mauve-light);
+}
+
+/* --------------------------------------------------------------------------
+   7. Footer
+   -------------------------------------------------------------------------- */
+footer {
+  padding: var(--space-lg) var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+footer .footer-inner,
+footer {
+  max-width: var(--content-width);
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  margin: 0 auto var(--space-md);
+  max-width: var(--content-width);
+}
+
+footer nav a {
+  color: var(--ivory);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+footer nav a:hover,
+footer nav a:focus-visible {
+  border-bottom-color: var(--mauve-light);
+  color: var(--mauve-light);
+}
+
+footer address {
+  font-style: normal;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: var(--sand);
+}
+
+footer address a {
+  color: var(--ivory);
+  text-decoration: underline;
+  text-decoration-color: var(--olive);
+}
+
+footer p {
+  max-width: var(--content-width);
+  margin: var(--space-md) auto 0;
+  font-size: var(--text-xs);
+  color: var(--sand);
+}
+
+/* --------------------------------------------------------------------------
+   8. Buttons, links, form controls
+   -------------------------------------------------------------------------- */
+/* Mauve is the proposal's primary call-to-action accent, so it carries
+   every button and button-styled link on the site. --mauve-dark (rather
+   than the lighter --mauve used for text links) is the resting background
+   here, since it clears WCAG AA contrast for the bold ivory label text. */
+.button,
+button[type="submit"] {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--ivory);
+  background-color: var(--mauve-dark);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75em 1.6em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover,
+.button:focus-visible,
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+  background-color: var(--mauve-darker);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--espresso-dark);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 30rem;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--espresso);
+  background-color: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius);
+  padding: 0.6em 0.75em;
+}
+
+textarea {
+  max-width: var(--text-measure);
+  resize: vertical;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--mauve);
+  outline-offset: 1px;
+  border-color: var(--mauve);
+}
+
+form button[type="submit"] {
+  margin-top: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   9. Home page
+   -------------------------------------------------------------------------- */
+#introduction {
+  padding-top: 0;
+}
+
+#introduction p {
+  font-size: var(--text-md);
+}
+
+#hair-quiz {
+  background-color: var(--pink);
+  border-top: none;
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  margin-block: var(--space-lg);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+#our-range ul {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: 1fr;
+  margin-top: var(--space-md);
+}
+
+#our-range li {
+  border-top: 3px solid var(--mauve);
+  padding-top: var(--space-sm);
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+#our-story blockquote {
+  margin-top: var(--space-lg);
+}
+
+#values ul,
+#target-audience ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+  margin-top: var(--space-md);
+}
+
+#values li {
+  border-left: 3px solid var(--olive);
+  padding-left: var(--space-sm);
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+#target-audience li {
+  max-width: none !important;
+  margin-left: 0 !important;
+  padding-left: 1.1em;
+}
+
+/* --------------------------------------------------------------------------
+   10. About page
+   -------------------------------------------------------------------------- */
+#mission-vision p {
+  background-color: var(--sand);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  max-width: var(--text-measure);
+}
+
+#mission-vision p + p {
+  margin-top: var(--space-sm);
+}
+
+/* --------------------------------------------------------------------------
+   11. Our Range (services) page
+   -------------------------------------------------------------------------- */
+#oils ul,
+#creams ul,
+#wash ul,
+#styling ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+#oils li,
+#creams li,
+#wash li,
+#styling li {
+  background-color: var(--white);
+  border-top: 3px solid var(--mauve);
+  padding: var(--space-md);
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+#oils li a,
+#creams li a,
+#wash li a,
+#styling li a {
+  display: inline-block;
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+}
+
+/* --------------------------------------------------------------------------
+   12. Contact page
+   -------------------------------------------------------------------------- */
+#contact-details ul,
+#our-shop ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#contact-details li,
+#our-shop li {
+  max-width: none !important;
+  margin-left: 0 !important;
+  padding: 0.35em 0;
+  border-bottom: 1px solid var(--line);
+}
+
+#our-shop {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   13. Enquiry page
+   -------------------------------------------------------------------------- */
+#faq dl {
+  border-top: 1px solid var(--line);
+}
+
+#faq dt {
+  border-top: 1px solid var(--line);
+  padding-top: var(--space-md);
+}
+
+#faq dt:first-of-type {
+  border-top: none;
+}
+
+#general-enquiry-form form {
+  max-width: 30rem;
+  margin-top: var(--space-md);
+}
+
+#general-enquiry-form textarea {
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive images & embeds
+   -------------------------------------------------------------------------- */
+.map-embed {
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  aspect-ratio: 4 / 3;
+  margin-top: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   15. Media queries
+   Breakpoints: base = mobile (<600px), tablet >=600px, desktop >=900px.
+   -------------------------------------------------------------------------- */
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  header {
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  main {
+    padding-inline: var(--space-lg);
+  }
+
+  #our-range ul,
+  #oils ul,
+  #creams ul,
+  #wash ul,
+  #styling ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #values ul,
+  #target-audience ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #our-shop {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 900px) {
+  header nav {
+    gap: var(--space-md) var(--space-lg);
+  }
+
+  #values ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #general-enquiry-form form {
+    max-width: 34rem;
+  }
+
+  footer nav,
+  footer address,
+  footer p {
+    margin-left: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. Accessibility & motion
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--mauve);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
