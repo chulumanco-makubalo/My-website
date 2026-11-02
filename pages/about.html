@@ -3,30 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Sibahle Naturals</title>
+    <title>About Us | Sibahle Naturals &ndash; Natural 4C Hair Care in Gqeberha</title>
+    <meta name="description" content="Learn how Sibahle Naturals grew from a family hair-care experiment into a Gqeberha brand making organic oils, creams and washes for 4C and afro-textured hair.">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome icons (cdnjs) - reference in Harvard list -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <!--Header Section-->
     <header>
         <!--Logo-->
-          <div class="logo">
-    <a href="../index.html">
-        <img src="../Assets/sibahle-naturals-icon.png" alt="Sibahle Naturals" width="150">
-    </a>
-</div>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../Assets/sibahle-naturals-icon.png" alt="Sibahle Naturals" width="150">
+            </a>
+        </div>
+        <!--Hamburger button (small screens)-->
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <!--Navigation Links-->
-        <nav>
-           <a href="../index.html">HOME</a>
-           <a href="./about.html">ABOUT US</a>
-           <a href="./services.html">OUR RANGE</a>
-           <a href="./contact.html">CONTACT US</a>
-           <a href="./enquiry.html">ENQUIRY</a>
+        <nav class="nav-links" id="primary-nav" aria-label="Main">
+            <a href="../index.html">HOME</a>
+            <a href="./about.html" aria-current="page">ABOUT US</a>
+            <a href="./services.html">OUR RANGE</a>
+            <a href="./contact.html">CONTACT US</a>
+            <a href="./enquiry.html">ENQUIRY</a>
         </nav>
     </header>
 
     <!--Main Section-->
-    <main>
+    <main id="main">
         <h1>About Us</h1>
 
         <!--Introduction-->
@@ -39,87 +53,103 @@
             </p>
         </section>
 
-        <!--Our Story Section-->
-        <section id="our-story">
-            <h2>Our Story</h2>
-            <p>
-                Before Sibahle Naturals had a name, it had a problem. Sibahle
-                struggled for years to find hair products that worked for her
-                curl pattern &ndash; most shelves offered either chemical-heavy
-                formulas or products too harsh for her hair to handle.
-            </p>
-            <p>
-                She started mixing her own oils and herbs, testing whether
-                natural, organic ingredients could actually do the job. Her
-                grandmother, who was living with alopecia, agreed to try the
-                blends. They worked. Encouraged by that, and by her grandmother
-                asking for more, Sibahle kept refining the formulas until they
-                were ready to share beyond her own family.
-            </p>
-            <blockquote>
-                <p>It started with my grandmother. Watching it help her is the reason there's a Sibahle Naturals at all.</p>
-                <footer>&mdash; Sibahle, Founder</footer>
-            </blockquote>
-            <p>
-                In 2022, Sibahle Naturals opened its first small shop in
-                Gqeberha, offering a full range of oils, creams, wash and
-                styling products, all built from those original family
-                formulas. Four years on, the brand has a loyal base of
-                customers and is ready to reach people beyond Gqeberha.
-            </p>
-        </section>
+        <!--Accordions (JavaScript: js/main.js)-->
+        <section id="about-details">
+            <h2 class="accordion-heading"><button type="button" class="accordion" id="story-btn" aria-expanded="true" aria-controls="story-panel" data-open>Our Story</button></h2>
+            <div class="panel" id="story-panel" role="region" aria-labelledby="story-btn">
+                <p>
+                    Before Sibahle Naturals had a name, it had a problem. Sibahle
+                    struggled for years to find hair products that worked for her
+                    curl pattern &ndash; most shelves offered either chemical-heavy
+                    formulas or products too harsh for her hair to handle.
+                </p>
+                <p>
+                    She started mixing her own oils and herbs, testing whether
+                    natural, organic ingredients could actually do the job. Her
+                    grandmother, who was living with alopecia, agreed to try the
+                    blends. They worked. Encouraged by that, and by her grandmother
+                    asking for more, Sibahle kept refining the formulas until they
+                    were ready to share beyond her own family.
+                </p>
+                <figure class="quote">
+                    <blockquote>
+                        <p>It started with my grandmother. Watching it help her is the reason there's a Sibahle Naturals at all.</p>
+                    </blockquote>
+                    <figcaption>&mdash; Sibahle, Founder</figcaption>
+                </figure>
+                <p>
+                    In 2022, Sibahle Naturals opened its first small shop in
+                    Gqeberha, offering a full range of oils, creams, wash and
+                    styling products, all built from those original family
+                    formulas. Four years on, the brand has a loyal base of
+                    customers and is ready to reach people beyond Gqeberha.
+                </p>
+            </div>
 
-        <!--Mission and Vision-->
-        <section id="mission-vision">
-            <h2>Mission and Vision</h2>
-            <p>
-                <strong>Mission:</strong> To create natural hair products that
-                really work for 4C or any afro-textured hair, made with organic
-                oils and herbals that help people maintain their hair easily and
-                love their crown.
-            </p>
-            <p>
-                <strong>Vision:</strong> To be one of South Africa's trusted
-                natural hair care ranges, known for producing quality results.
-            </p>
-        </section>
+            <h2 class="accordion-heading"><button type="button" class="accordion" id="mission-btn" aria-expanded="true" aria-controls="mission-panel">Mission and Vision</button></h2>
+            <div class="panel" id="mission-panel" role="region" aria-labelledby="mission-btn">
+                <p>
+                    <strong>Mission:</strong> To create natural hair products that
+                    really work for 4C or any afro-textured hair, made with organic
+                    oils and herbals that help people maintain their hair easily and
+                    love their crown.
+                </p>
+                <p>
+                    <strong>Vision:</strong> To be one of South Africa's trusted
+                    natural hair care ranges, known for producing quality results.
+                </p>
+            </div>
 
-        <!--Target Audience-->
-        <section id="target-audience">
-            <h2>Who We Serve</h2>
-            <ul>
-                <li>People already natural, looking for products that genuinely work on their curl pattern</li>
-                <li>People with natural hair looking for non-harsh, organic products that moisturise and support their curl pattern</li>
-                <li>People with relaxed hair who want to transition to afro hair</li>
-                <li>Parents buying for their kids' natural hair, looking for products that are gentle on the scalp</li>
-                <li>Anyone with afro-textured or curly hair in and around Gqeberha</li>
-            </ul>
-        </section>
+            <h2 class="accordion-heading"><button type="button" class="accordion" id="serve-btn" aria-expanded="true" aria-controls="serve-panel">Who We Serve</button></h2>
+            <div class="panel" id="serve-panel" role="region" aria-labelledby="serve-btn">
+                <ul>
+                    <li>People already natural, looking for products that genuinely work on their curl pattern</li>
+                    <li>People with natural hair looking for non-harsh, organic products that moisturise and support their curl pattern</li>
+                    <li>People with relaxed hair who want to transition to afro hair</li>
+                    <li>Parents buying for their kids' natural hair, looking for products that are gentle on the scalp</li>
+                    <li>Anyone with afro-textured or curly hair in and around Gqeberha</li>
+                </ul>
+            </div>
 
-        <!--What We Believe-->
-        <section id="values">
-            <h2>What We Believe</h2>
-            <ul>
-                <li><strong>Made honest:</strong> organic, transparent ingredients, with no vague "natural blend" hiding behind the label</li>
-                <li><strong>Made to work:</strong> formulated and tested for 4C and afro-textured hair, including hair recovering from conditions like alopecia</li>
-                <li><strong>Made for you:</strong> guidance for every hair journey, whether you're natural, transitioning, or shopping for your kids</li>
-            </ul>
+            <h2 class="accordion-heading"><button type="button" class="accordion" id="believe-btn" aria-expanded="true" aria-controls="believe-panel">What We Believe</button></h2>
+            <div class="panel" id="believe-panel" role="region" aria-labelledby="believe-btn">
+                <ul>
+                    <li><strong>Made honest:</strong> organic, transparent ingredients, with no vague "natural blend" hiding behind the label</li>
+                    <li><strong>Made to work:</strong> formulated and tested for 4C and afro-textured hair, including hair recovering from conditions like alopecia</li>
+                    <li><strong>Made for you:</strong> guidance for every hair journey, whether you're natural, transitioning, or shopping for your kids</li>
+                </ul>
+            </div>
         </section>
     </main>
 
     <!--Footer Section-->
     <footer>
-        <nav>
-            <a href="../index.html">HOME</a>
-            <a href="./about.html">ABOUT US</a>
-            <a href="./contact.html">CONTACT US</a>
-        </nav>
-        <address>
-            14 Bird Street, Central, Gqeberha, 6001, Eastern Cape, South Africa<br>
-            Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a><br>
-            Phone: <a href="tel:0410192834">041 019 2834</a>
-        </address>
-        <p>&copy; 2026 Sibahle Naturals. All rights reserved.</p>
+        <div class="footer-top">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="../index.html">HOME</a>
+                <a href="./about.html" aria-current="page">ABOUT US</a>
+                <a href="./services.html">OUR RANGE</a>
+                <a href="./contact.html">CONTACT US</a>
+                <a href="./enquiry.html">ENQUIRY</a>
+            </nav>
+            <address>
+                14 Bird Street, Central, Gqeberha, 6001, Eastern Cape, South Africa<br>
+                Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a><br>
+                Phone: <a href="tel:+27410192834">041 019 2834</a>
+            </address>
+            <!--Social links: replace with the real profile URLs-->
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Sibahle Naturals on Facebook (opens in a new tab)"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Sibahle Naturals on Instagram (opens in a new tab)"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <!--Date stamp and live clock (filled by js/main.js)-->
+            <p class="timestamp"><span id="datestamp"></span> &middot; <span id="time"></span></p>
+            <p>&copy; 2026 Sibahle Naturals. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="../js/main.js" defer></script>
 </body>
 </html>

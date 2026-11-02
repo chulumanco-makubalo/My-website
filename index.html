@@ -3,21 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Sibahle Naturals</title>
+    <title>Sibahle Naturals | Natural Hair Care for 4C &amp; Afro Hair in Gqeberha</title>
+    <meta name="description" content="Organic oils, creams, wash and styling products made in Gqeberha for 4C and afro-textured hair. Take our hair quiz or send an enquiry.">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Local SEO: structured data so search engines can show the shop's details -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Sibahle Naturals",
+      "description": "Natural hair care products for 4C and afro-textured hair, made in Gqeberha.",
+      "telephone": "+27410192834",
+      "email": "hello@sibahlenaturals.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14 Bird Street, Central",
+        "addressLocality": "Gqeberha",
+        "postalCode": "6001",
+        "addressRegion": "Eastern Cape",
+        "addressCountry": "ZA"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "17:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+      ]
+    }
+    </script>
+    <!-- Font Awesome icons (cdnjs) - reference in Harvard list -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <!--Header Section-->
     <header>
         <!--Logo-->
         <div class="logo">
-    <a href="./index.html">
-        <img src="./Assets/sibahle-naturals-icon.png" alt="Sibahle Naturals" width="150">
-    </a>
-</div>
+            <a href="./index.html">
+                <img src="./Assets/sibahle-naturals-icon.png" alt="Sibahle Naturals" width="150">
+            </a>
+        </div>
+        <!--Hamburger button (small screens)-->
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <!--Navigation Links-->
-        <nav>
-            <a href="./index.html">HOME</a>
+        <nav class="nav-links" id="primary-nav" aria-label="Main">
+            <a href="./index.html" aria-current="page">HOME</a>
             <a href="./pages/about.html">ABOUT US</a>
             <a href="./pages/services.html">OUR RANGE</a>
             <a href="./pages/contact.html">CONTACT US</a>
@@ -26,7 +63,7 @@
     </header>
 
     <!--Main Section-->
-    <main>
+    <main id="main">
         <h1>Natural Hair Care, Made for Hair Like Ours</h1>
 
         <!--Introduction-->
@@ -36,38 +73,65 @@
                 South Africa. We make oils, creams, wash and styling products from
                 organic oils and herbs, formulated for 4C and afro-textured hair.
             </p>
+            <p class="cta"><a href="./pages/enquiry.html" class="button">Enquire About Our Range</a></p>
         </section>
 
-        <!--Hair Quiz Prompt-->
+        <!--Hair Quiz (JavaScript: js/quiz.js)-->
         <section id="hair-quiz">
             <h2>Not Sure Where to Start?</h2>
-            <p>
-                Take our short hair quiz and we'll recommend products suited to
-                your curl pattern.
-            </p>
-            <a href="./pages/enquiry.html" class="button">Take the Quiz</a>
+            <p>Take our short hair quiz and we'll recommend a product for you.</p>
+            <form id="quiz-form" novalidate>
+                <fieldset>
+                    <legend>What do you want most for your hair?</legend>
+                    <label class="choice"><input type="radio" name="goal" value="moisture"> Softness and shine</label>
+                    <label class="choice"><input type="radio" name="goal" value="definition"> Curl definition</label>
+                    <label class="choice"><input type="radio" name="goal" value="cleanse"> A gentle cleanse</label>
+                    <label class="choice"><input type="radio" name="goal" value="style"> Styling and hold</label>
+                </fieldset>
+                <button type="submit" class="button">Get my recommendation</button>
+                <p id="quiz-result" class="form-status" role="status"></p>
+            </form>
         </section>
 
         <!--Our Range-->
         <section id="our-range">
             <h2>Our Range</h2>
             <figure class="range-photo">
-                <img
-                    src="./Assets/sibahle-naturals-products.png"
-                    alt="Sibahle Naturals shampoo, conditioner, leave-in hair mist, deep conditioning mask, styling cream and hair growth oil arranged on a wooden tray">
+                <button type="button" class="lightbox-trigger">
+                    <img
+                        src="./Assets/sibahle-naturals-products.png"
+                        alt="Sibahle Naturals shampoo, conditioner, leave-in hair mist, deep conditioning mask, styling cream and hair growth oil arranged on a wooden tray"
+                        loading="lazy">
+                    <span class="visually-hidden">Click to enlarge</span>
+                </button>
                 <figcaption>Our full range &ndash; made with organic oils and herbs for 4C and afro-textured hair.</figcaption>
             </figure>
-            <ul>
-                <li>Coil &amp; Curl Oil &ndash; a daily oil for shine, softness and scalp care</li>
-                <li>Curl Definition Cream &ndash; hold and definition for 4C and afro-textured curls</li>
-                <li>Gentle Wash &ndash; a gentle, organic cleanse for sensitive scalps</li>
-                <li>Styling products for everyday wear</li>
+            <ul class="grid-list grid-list--range">
+                <li><a href="./pages/services.html?category=oils">Coil &amp; Curl Oil</a> &ndash; a daily oil for shine, softness and scalp care</li>
+                <li><a href="./pages/services.html?category=creams">Curl Definition Cream</a> &ndash; hold and definition for 4C and afro-textured curls</li>
+                <li><a href="./pages/services.html?category=wash">Gentle Wash</a> &ndash; a gentle, organic cleanse for sensitive scalps</li>
+                <li><a href="./pages/services.html?category=styling">Styling products</a> for everyday wear</li>
             </ul>
             <p>
                 We do not sell online yet. Send us an enquiry to ask about
                 availability, pricing and collection.
             </p>
-            <a href="./pages/enquiry.html" class="button">Enquire About Our Range</a>
+        </section>
+
+        <!--Video (YouTube embed)-->
+        <section id="video">
+            <h2>Watch</h2>
+            <!--Replace REPLACE_WITH_YOUTUBE_ID with the ID from your YouTube link
+                (the part after v= or after youtu.be/)-->
+            <div class="video-embed">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/REPLACE_WITH_YOUTUBE_ID"
+                    title="Sibahle Naturals video"
+                    loading="lazy"
+                    allow="accelerometer; encrypted-media; picture-in-picture"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
         </section>
 
         <!--Our Story Teaser-->
@@ -78,17 +142,19 @@
                 actually worked, and a grandmother living with alopecia who was
                 willing to try them first.
             </p>
-            <blockquote>
-                <p>It started with my grandmother. Watching it help her is the reason there's a Sibahle Naturals at all.</p>
-                <footer>&mdash; Sibahle, Founder</footer>
-            </blockquote>
-            <a href="./pages/about.html">Read the Full Story</a>
+            <figure class="quote">
+                <blockquote>
+                    <p>It started with my grandmother. Watching it help her is the reason there's a Sibahle Naturals at all.</p>
+                </blockquote>
+                <figcaption>&mdash; Sibahle, Founder</figcaption>
+            </figure>
+            <p><a href="./pages/about.html">Read the Full Story</a></p>
         </section>
 
         <!--What We Believe-->
         <section id="values">
             <h2>What We Believe</h2>
-            <ul>
+            <ul class="grid-list grid-list--values">
                 <li><strong>Made honest:</strong> organic, transparent ingredients in every product</li>
                 <li><strong>Made to work:</strong> formulated and tested for 4C and afro-textured hair</li>
                 <li><strong>Made for you:</strong> guidance for every hair journey, natural or transitioning</li>
@@ -98,17 +164,33 @@
 
     <!--Footer Section-->
     <footer>
-        <nav>
-            <a href="./index.html">HOME</a>
-            <a href="./pages/about.html">ABOUT US</a>
-            <a href="./pages/contact.html">CONTACT US</a>
-        </nav>
-        <address>
-            14 Bird Street, Central, Gqeberha, 6001, Eastern Cape, South Africa<br>
-            Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a><br>
-            Phone: <a href="tel:0410192834">041 019 2834</a>
-        </address>
-        <p>&copy; 2026 Sibahle Naturals. All rights reserved.</p>
+        <div class="footer-top">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="./index.html" aria-current="page">HOME</a>
+                <a href="./pages/about.html">ABOUT US</a>
+                <a href="./pages/services.html">OUR RANGE</a>
+                <a href="./pages/contact.html">CONTACT US</a>
+                <a href="./pages/enquiry.html">ENQUIRY</a>
+            </nav>
+            <address>
+                14 Bird Street, Central, Gqeberha, 6001, Eastern Cape, South Africa<br>
+                Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a><br>
+                Phone: <a href="tel:+27410192834">041 019 2834</a>
+            </address>
+            <!--Social links: replace with the real profile URLs-->
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Sibahle Naturals on Facebook (opens in a new tab)"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Sibahle Naturals on Instagram (opens in a new tab)"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <!--Date stamp and live clock (filled by js/main.js)-->
+            <p class="timestamp"><span id="datestamp"></span> &middot; <span id="time"></span></p>
+            <p>&copy; 2026 Sibahle Naturals. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="./js/main.js" defer></script>
+    <script src="./js/quiz.js" defer></script>
 </body>
 </html>
