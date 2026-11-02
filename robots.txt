@@ -1,0 +1,5 @@
+# Sibahle Naturals - instructions for search engine crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://chulumanco-makubalo.github.io/My-website/sitemap.xml
