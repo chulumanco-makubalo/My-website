@@ -3,30 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Sibahle Naturals</title>
+    <title>Contact Us | Sibahle Naturals &ndash; Natural Hair Care Shop in Gqeberha</title>
+    <meta name="description" content="Visit or contact Sibahle Naturals at 14 Bird Street, Central, Gqeberha. Find our opening hours, phone number, email and map directions.">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Leaflet map library (cdnjs) - reference in Harvard list -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Local SEO: structured data so search engines can show the shop's details -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Sibahle Naturals",
+      "description": "Natural hair care products for 4C and afro-textured hair, made in Gqeberha.",
+      "telephone": "+27410192834",
+      "email": "hello@sibahlenaturals.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14 Bird Street, Central",
+        "addressLocality": "Gqeberha",
+        "postalCode": "6001",
+        "addressRegion": "Eastern Cape",
+        "addressCountry": "ZA"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "17:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+      ]
+    }
+    </script>
+    <!-- Font Awesome icons (cdnjs) - reference in Harvard list -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <!--Header Section-->
     <header>
         <!--Logo-->
         <div class="logo">
-    <a href="../index.html">
-        <img src="../Assets/sibahle-naturals-icon.png" alt="Sibahle Naturals" width="150">
-    </a>
-</div>
+            <a href="../index.html">
+                <img src="../Assets/sibahle-naturals-icon.png" alt="Sibahle Naturals" width="150">
+            </a>
+        </div>
+        <!--Hamburger button (small screens)-->
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <!--Navigation Links-->
-        <nav>
-           <a href="../index.html">HOME</a>
-           <a href="./about.html">ABOUT US</a>
-           <a href="./services.html">OUR RANGE</a>
-           <a href="./contact.html">CONTACT US</a>
-           <a href="./enquiry.html">ENQUIRY</a>
+        <nav class="nav-links" id="primary-nav" aria-label="Main">
+            <a href="../index.html">HOME</a>
+            <a href="./about.html">ABOUT US</a>
+            <a href="./services.html">OUR RANGE</a>
+            <a href="./contact.html" aria-current="page">CONTACT US</a>
+            <a href="./enquiry.html">ENQUIRY</a>
         </nav>
     </header>
 
     <!--Main Section-->
-    <main>
+    <main id="main">
         <h1>Contact Us</h1>
         <p>
             Have a question or want to visit the shop? Here's how to find and
@@ -37,49 +76,109 @@
         <!--Contact Details-->
         <section id="contact-details">
             <h2>Get in Touch</h2>
-            <ul>
+            <ul class="contact-list">
                 <li>Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a></li>
-                <li>Phone: <a href="tel:0410192834">041 019 2834</a></li>
-                <li>Hours: Monday to Friday, 9:00 AM&ndash;5:00 PM; Saturday, 9:00 AM&ndash;1:00 PM</li>
+                <li>Phone: <a href="tel:+27410192834">041 019 2834</a></li>
             </ul>
+            <table class="hours">
+                <caption class="visually-hidden">Trading hours</caption>
+                <thead><tr><th scope="col">Day</th><th scope="col">Hours</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">Monday to Friday</th><td>9:00 AM&ndash;5:00 PM</td></tr>
+                    <tr><th scope="row">Saturday</th><td>9:00 AM&ndash;1:00 PM</td></tr>
+                    <tr><th scope="row">Sunday</th><td>Closed</td></tr>
+                </tbody>
+            </table>
         </section>
 
         <!--Our Shop-->
         <section id="our-shop">
             <h2>Our Shop</h2>
-            <ul>
-                <li>Address: 14 Bird Street, Central, Gqeberha, 6001</li>
-                <li>Map: <a href="https://www.google.com/maps/search/?api=1&query=14+Bird+Street+Central+Gqeberha" target="_blank" rel="noopener">View on Google Maps</a></li>
-            </ul>
-            <!--Google Map: wrapped so it can be scaled responsively via CSS
-                 (see .map-embed in style.css) instead of relying on the
-                 fixed width/height attributes below. -->
-            <div class="map-embed">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.0!2d25.5738!3d-33.9608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBird+Street%2C+Gqeberha!5e0!3m2!1sen!2sza"
-                    width="600"
-                    height="450"
-                    loading="lazy"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    title="Map showing the Sibahle Naturals shop location in Gqeberha">
-                </iframe>
+            <div>
+                <address>14 Bird Street, Central, Gqeberha, 6001</address>
+                <p><a href="https://www.google.com/maps/search/?api=1&amp;query=14+Bird+Street+Central+Gqeberha" target="_blank" rel="noopener">View on Google Maps (opens in a new tab)</a></p>
             </div>
+            <!--Interactive map (Leaflet + OpenStreetMap, js/map.js). The link above works
+                without JavaScript.-->
+            <div class="map-embed">
+                <div id="map" role="region" aria-label="Interactive map showing the Sibahle Naturals shop in Gqeberha"></div>
+            </div>
+        </section>
+
+        <!--Contact form (JavaScript validation: js/forms.js)-->
+        <section id="contact-form">
+            <h2>Send Us a Message</h2>
+            <form class="form-card" id="contact-form-el" action="mailto:hello@sibahlenaturals.co.za" method="post" enctype="text/plain" novalidate data-validate data-handler="contact">
+                <p class="form-note">Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+                <div class="form-group">
+                    <label for="con_name">Full name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="con_name" name="con_name" data-label="Full name" required minlength="2" autocomplete="name" aria-describedby="con_name-error">
+                    <span class="error" id="con_name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="con_email">Email address <span aria-hidden="true">*</span></label>
+                    <input type="email" id="con_email" name="con_email" data-label="Email address" required autocomplete="email" aria-describedby="con_email-error">
+                    <span class="error" id="con_email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="con_phone">Phone number <span class="form-note">(optional)</span></label>
+                    <input type="tel" id="con_phone" name="con_phone" data-label="Phone number" autocomplete="tel" placeholder="e.g. 041 019 2834" data-type="sa-phone" inputmode="tel" aria-describedby="con_phone-error">
+                    <span class="error" id="con_phone-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="con_type">Type of message <span aria-hidden="true">*</span></label>
+                    <select id="con_type" name="con_type" data-label="Type of message" required aria-describedby="con_type-error">
+                        <option value="">--Select--</option>
+                        <option value="General question">General question</option>
+                        <option value="Product question">Product question</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="error" id="con_type-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="con_message">Message <span aria-hidden="true">*</span></label>
+                    <textarea id="con_message" name="con_message" data-label="Message" required minlength="10" aria-describedby="con_message-error"></textarea>
+                    <span class="error" id="con_message-error"></span>
+                </div>
+                <button type="submit">Send Message</button>
+                <div class="form-status" role="status"></div>
+                <p class="form-note">We only use your details to reply to your message. Sending opens your email app with the message ready to send.</p>
+            </form>
         </section>
     </main>
 
     <!--Footer Section-->
     <footer>
-        <nav>
-            <a href="../index.html">HOME</a>
-            <a href="./about.html">ABOUT US</a>
-            <a href="./contact.html">CONTACT US</a>
-        </nav>
-        <address>
-            14 Bird Street, Central, Gqeberha, 6001, Eastern Cape, South Africa<br>
-            Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a><br>
-            Phone: <a href="tel:0410192834">041 019 2834</a>
-        </address>
-        <p>&copy; 2026 Sibahle Naturals. All rights reserved.</p>
+        <div class="footer-top">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="../index.html">HOME</a>
+                <a href="./about.html">ABOUT US</a>
+                <a href="./services.html">OUR RANGE</a>
+                <a href="./contact.html" aria-current="page">CONTACT US</a>
+                <a href="./enquiry.html">ENQUIRY</a>
+            </nav>
+            <address>
+                14 Bird Street, Central, Gqeberha, 6001, Eastern Cape, South Africa<br>
+                Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a><br>
+                Phone: <a href="tel:+27410192834">041 019 2834</a>
+            </address>
+            <!--Social links: replace with the real profile URLs-->
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Sibahle Naturals on Facebook (opens in a new tab)"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Sibahle Naturals on Instagram (opens in a new tab)"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <!--Date stamp and live clock (filled by js/main.js)-->
+            <p class="timestamp"><span id="datestamp"></span> &middot; <span id="time"></span></p>
+            <p>&copy; 2026 Sibahle Naturals. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
+    <script src="../js/map.js" defer></script>
+    <script src="../js/forms.js" defer></script>
 </body>
 </html>
