@@ -24,7 +24,7 @@ Save the images in a `screenshots/` folder in the repository.
 | Page | Mobile (390px) | Tablet (768px) | Desktop (1280px) |
 | --- | --- | --- | --- |
 | Home | ![Home mobile](Screenshots/home-mobile.png) | ![Home tablet](Screenshots/home-tablet.png) | ![Home desktop](Screenshots/home-desktop.png) |
-| About Us | ![About mobile](Screenshots/about-mobile.png) | ![About tablet](Screenshots/about-tablet.png) | ![About desktop](screenshots/about-desktop.png) |
+| About Us | ![About mobile](Screenshots/about-mobile.png) | ![About tablet](Screenshots/about-tablet.png) | ![About desktop](Screenshots/about-desktop.png) |
 | Our Range | ![Range mobile](Screenshots/services-mobile.png) | ![Range tablet](Screenshots/services-tablet.png) | ![Range desktop](Screenshots/services-desktop.png) |
 | Contact Us | ![Contact mobile](Screenshots/contact-mobile.png) | ![Contact tablet](Screenshots/contact-tablet.png) | ![Contact desktop](Screenshots/contact-desktop.png) |
 | Enquiry | ![Enquiry mobile](Screenshots/enquiry-mobile.png) | ![Enquiry tablet](Screenshots/enquiry-tablet.png) | ![Enquiry desktop](Screenshots/enquiry-desktop.png) |
