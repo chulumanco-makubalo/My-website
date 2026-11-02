@@ -22,7 +22,7 @@ choose "Responsive", set the width, and use the three-dot menu > "Capture screen
 Save the images in a `screenshots/` folder in the repository.
 
 | Page | Mobile (390px) | Tablet (768px) | Desktop (1280px) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Home | ![Home mobile](screenshots/home-mobile.png) | ![Home tablet](screenshots/home-tablet.png) | ![Home desktop](screenshots/home-desktop.png) |
 | About Us | ![About mobile](screenshots/about-mobile.png) | ![About tablet](screenshots/about-tablet.png) | ![About desktop](screenshots/about-desktop.png) |
 | Our Range | ![Range mobile](screenshots/services-mobile.png) | ![Range tablet](screenshots/services-tablet.png) | ![Range desktop](screenshots/services-desktop.png) |
