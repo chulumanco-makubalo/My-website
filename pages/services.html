@@ -3,30 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Range - Sibahle Naturals</title>
+    <title>Our Range | Natural Oils, Creams &amp; Wash for 4C Hair &ndash; Sibahle Naturals</title>
+    <meta name="description" content="Explore Sibahle Naturals' range of organic oils, curl creams, gentle wash and styling products for 4C and afro-textured hair, made in Gqeberha.">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome icons (cdnjs) - reference in Harvard list -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <!--Header Section-->
     <header>
         <!--Logo-->
-       <div class="logo">
-    <a href="../index.html">
-         <img src="../Assets/sibahle-naturals-icon.png" alt="Sibahle Naturals" width="150">
-    </a>
-</div>
-    <!--Navigation Links-->
-    <nav>
-           <a href="../index.html">HOME</a>
-           <a href="./about.html">ABOUT US</a>
-           <a href="./services.html">OUR RANGE</a>
-           <a href="./contact.html">CONTACT US</a>
-           <a href="./enquiry.html">ENQUIRY</a>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../Assets/sibahle-naturals-icon.png" alt="Sibahle Naturals" width="150">
+            </a>
+        </div>
+        <!--Hamburger button (small screens)-->
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!--Navigation Links-->
+        <nav class="nav-links" id="primary-nav" aria-label="Main">
+            <a href="../index.html">HOME</a>
+            <a href="./about.html">ABOUT US</a>
+            <a href="./services.html" aria-current="page">OUR RANGE</a>
+            <a href="./contact.html">CONTACT US</a>
+            <a href="./enquiry.html">ENQUIRY</a>
         </nav>
-</header>
+    </header>
 
     <!--Main Section-->
-    <main>
+    <main id="main">
         <h1>Our Range</h1>
         <p>
             Oils, creams, wash and styling &ndash; made with organic
@@ -35,84 +49,94 @@
             pricing and collection.
         </p>
 
-        <!--Gallery-->
-        <section id="range-gallery" class="photo-grid">
+        <!--Gallery (click a photo to enlarge)-->
+        <section id="range-gallery" class="photo-grid" aria-label="Photo gallery">
             <figure>
-                <img
-                    src="../Assets/sibahle-naturals-afro.jpg"
-                    alt="Woman with a natural 4C afro, styled with definition and shine">
+                <button type="button" class="lightbox-trigger">
+                    <img
+                        src="../Assets/sibahle-naturals-afro.jpg"
+                        alt="Woman with a natural 4C afro, styled with definition and shine"
+                        loading="lazy">
+                    <span class="visually-hidden">Click to enlarge</span>
+                </button>
                 <figcaption>Definition and shine, the natural way.</figcaption>
             </figure>
             <figure>
-                <img
-                    src="../Assets/bantu-knots.jpg"
-                    alt="Close-up of a woman with braided bantu-knot style hair, eyes closed">
+                <button type="button" class="lightbox-trigger">
+                    <img
+                        src="../Assets/bantu-knots.jpg"
+                        alt="Close-up of a woman with braided bantu-knot style hair, eyes closed"
+                        loading="lazy">
+                    <span class="visually-hidden">Click to enlarge</span>
+                </button>
                 <figcaption>Healthy hair, however you wear it.</figcaption>
             </figure>
         </section>
 
-        <!--Oils Section-->
-        <section id="oils">
-            <h2>Oils</h2>
-            <ul>
-                <li>
-                    <h3>Coil &amp; Curl Oil</h3>
-                    <p>A lightweight daily oil for shine, softness and scalp care.</p>
-                    <a href="./enquiry.html" class="button">Enquire About This</a>
-                </li>
-            </ul>
-        </section>
-
-        <!--Creams Section-->
-        <section id="creams">
-            <h2>Creams</h2>
-            <ul>
-                <li>
-                    <h3>Curl Definition Cream</h3>
-                    <p>Hold and definition for 4C and afro-textured curls.</p>
-                    <a href="./enquiry.html" class="button">Enquire About This</a>
-                </li>
-            </ul>
-        </section>
-
-        <!--Wash Section-->
-        <section id="wash">
-            <h2>Wash</h2>
-            <ul>
-                <li>
-                    <h3>Gentle Wash</h3>
-                    <p>A gentle, organic cleanse that's kind to sensitive scalps.</p>
-                    <a href="./enquiry.html" class="button">Enquire About This</a>
-                </li>
-            </ul>
-        </section>
-
-        <!--Styling Section-->
-        <section id="styling">
-            <h2>Styling</h2>
-            <ul>
-                <li>
-                    <h3>Styling Range</h3>
-                    <p>Everyday styling products to hold and finish your look.</p>
-                    <a href="./enquiry.html" class="button">Enquire About This</a>
-                </li>
-            </ul>
+        <!--Dynamic product list with search, filter and sort (js/products.js + js/range.js)-->
+        <section id="products">
+            <h2>Browse the Range</h2>
+            <form class="range-controls" role="search" aria-label="Search and filter products" onsubmit="return false">
+                <div>
+                    <label for="product-search">Search</label>
+                    <input type="search" id="product-search" placeholder="e.g. oil, curls, wash" autocomplete="off">
+                </div>
+                <div>
+                    <label for="product-category">Category</label>
+                    <select id="product-category">
+                        <option value="all">All products</option>
+                        <option value="oils">Oils</option>
+                        <option value="creams">Creams</option>
+                        <option value="wash">Wash</option>
+                        <option value="styling">Styling</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="product-sort">Sort by</label>
+                    <select id="product-sort">
+                        <option value="name-asc">Name (A to Z)</option>
+                        <option value="price-asc">Price (low to high)</option>
+                        <option value="price-desc">Price (high to low)</option>
+                    </select>
+                </div>
+                <button type="button" id="product-reset" class="button">Clear</button>
+            </form>
+            <p id="results-count" role="status"></p>
+            <div id="product-list" class="product-grid"></div>
+            <noscript><p>Please turn on JavaScript to browse our range, or <a href="./enquiry.html">send us an enquiry</a>.</p></noscript>
         </section>
     </main>
 
     <!--Footer Section-->
     <footer>
-        <nav>
-            <a href="../index.html">HOME</a>
-            <a href="./about.html">ABOUT US</a>
-            <a href="./contact.html">CONTACT US</a>
-        </nav>
-        <address>
-            14 Bird Street, Central, Gqeberha, 6001, Eastern Cape, South Africa<br>
-            Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a><br>
-            Phone: <a href="tel:0410192834">041 019 2834</a>
-        </address>
-        <p>&copy; 2026 Sibahle Naturals. All rights reserved.</p>
+        <div class="footer-top">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="../index.html">HOME</a>
+                <a href="./about.html">ABOUT US</a>
+                <a href="./services.html" aria-current="page">OUR RANGE</a>
+                <a href="./contact.html">CONTACT US</a>
+                <a href="./enquiry.html">ENQUIRY</a>
+            </nav>
+            <address>
+                14 Bird Street, Central, Gqeberha, 6001, Eastern Cape, South Africa<br>
+                Email: <a href="mailto:hello@sibahlenaturals.co.za">hello@sibahlenaturals.co.za</a><br>
+                Phone: <a href="tel:+27410192834">041 019 2834</a>
+            </address>
+            <!--Social links: replace with the real profile URLs-->
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Sibahle Naturals on Facebook (opens in a new tab)"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Sibahle Naturals on Instagram (opens in a new tab)"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <!--Date stamp and live clock (filled by js/main.js)-->
+            <p class="timestamp"><span id="datestamp"></span> &middot; <span id="time"></span></p>
+            <p>&copy; 2026 Sibahle Naturals. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/products.js" defer></script>
+    <script src="../js/range.js" defer></script>
 </body>
 </html>
