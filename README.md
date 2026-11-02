@@ -24,10 +24,10 @@ Save the images in a `screenshots/` folder in the repository.
 | Page | Mobile (390px) | Tablet (768px) | Desktop (1280px) |
 | --- | --- | --- | --- |
 | Home | ![Home mobile](Screenshots/home-mobile.png) | ![Home tablet](Screenshots/home-tablet.png) | ![Home desktop](Screenshots/home-desktop.png) |
-| About Us | ![About mobile](screenshots/about-mobile.png) | ![About tablet](screenshots/about-tablet.png) | ![About desktop](screenshots/about-desktop.png) |
-| Our Range | ![Range mobile](screenshots/services-mobile.png) | ![Range tablet](screenshots/services-tablet.png) | ![Range desktop](screenshots/services-desktop.png) |
-| Contact Us | ![Contact mobile](screenshots/contact-mobile.png) | ![Contact tablet](screenshots/contact-tablet.png) | ![Contact desktop](screenshots/contact-desktop.png) |
-| Enquiry | ![Enquiry mobile](screenshots/enquiry-mobile.png) | ![Enquiry tablet](screenshots/enquiry-tablet.png) | ![Enquiry desktop](screenshots/enquiry-desktop.png) |
+| About Us | ![About mobile](Screenshots/about-mobile.png) | ![About tablet](Screenshots/about-tablet.png) | ![About desktop](screenshots/about-desktop.png) |
+| Our Range | ![Range mobile](Screenshots/services-mobile.png) | ![Range tablet](Screenshots/services-tablet.png) | ![Range desktop](Screenshots/services-desktop.png) |
+| Contact Us | ![Contact mobile](Screenshots/contact-mobile.png) | ![Contact tablet](Screenshots/contact-tablet.png) | ![Contact desktop](Screenshots/contact-desktop.png) |
+| Enquiry | ![Enquiry mobile](Screenshots/enquiry-mobile.png) | ![Enquiry tablet](Screenshots/enquiry-tablet.png) | ![Enquiry desktop](Screenshots/enquiry-desktop.png) |
 
 Also add one screenshot of the mobile menu open (`screenshots/menu-open-mobile.png`).
 
